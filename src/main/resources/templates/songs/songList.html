@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Song List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        body {
+        background-image: url("Leonardo_Diffusion_XL_sfondo_di_spotify_2.jpg");
+        background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <table class="table table-striped box" style="margin-top: 400px;">
+        <thead>
+        <tr>
+            <th class="title">
+                <h3>Best song of 2023</h3>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="song : ${songList}">
+            <td>
+                <div class="row d-flex justify-content-between p-2">
+                    <div class="col-9">
+                        <p th:text="${song.title}"></p>
+                    </div>
+                    <div class="col-3">
+                        <a th:href="@{/songs/details/{id}(id=${song.id})}"
+                           class="btn btn-outline-light btn-block rounded-pill "> Song Info</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row d-flex justify-content-end mt-4">
+        <a th:href="@{/}" class="btn rounded-pill button-back-home">Back to Home </a>
+    </div>
+</div>
+</body>
+</html>
+
+

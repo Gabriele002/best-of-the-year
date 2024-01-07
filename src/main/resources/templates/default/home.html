@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auguri per il nuovo anno</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+        background-image: url("Leonardo_Diffusion_XL_Black_background_with_golden_confetti_0.jpg");
+        background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+<div class="container" style="margin-top: 500px;">
+    <div class="row d-flex align-items-center">
+        <div class="col text-center">
+            <h1 th:text="|Best of ${year} by ${name}|" class="display-4"></h1>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-2 text-center ">
+                    <a th:href="@{/songs}" class="btn btn-outline-success rounded-pill">Go to song list</a>
+                </div>
+                <div class="col-2 text-center">
+                    <a th:href="@{/songs}" class="btn btn-outline-danger rounded-pill">Go to film list</a>
+                </div>
+                <div class="col-2 text-center">
+                    <a th:href="@{/songs}" class="btn btn-outline-warning rounded-pill">Go to serie tv list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
